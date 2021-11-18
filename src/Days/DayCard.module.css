@@ -1,0 +1,35 @@
+.dayCard {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+
+  padding: 15px 25px;
+
+  color: #fff;
+
+  line-height: 30px;
+  text-shadow: 1px 3px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+  height: 110px;
+  width: 110px;
+}
+
+.day {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.temp {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.weather {
+  font-size: 14px;
+  font-weight: 700;
+}

@@ -1,0 +1,26 @@
+.morning {
+  background-image: url("./assets/morning.png");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease;
+  max-height: 870px;
+  max-width: 680px;
+}
+
+.day {
+  background-image: url("./assets/day.png");
+  max-height: 870px;
+  max-width: 680px;
+}
+
+.eve {
+  background-image: url("./assets/evening.png");
+  max-height: 870px;
+  max-width: 680px;
+}
+
+.night {
+  background-image: url("./assets/night.png");
+  max-height: 870px;
+  max-width: 680px;
+}
