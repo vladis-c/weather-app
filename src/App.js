@@ -122,7 +122,7 @@ function App() {
               </div>
               <DayCard
                 dayOfTheWeek={new Date(
-                  weather[1].list[16].dt_txt
+                  weather[1].list[8].dt_txt
                 ).toLocaleString("en-fi", { weekday: "long" })}
                 temp={`${Math.round(weather[1].list[8].main.temp)}°c`}
                 weather={weather[1].list[8].weather[0].main}
