@@ -82,20 +82,23 @@ function App() {
   }, [currentDate, setCurrentDate])
 
   const location = useGeolocation()
+  window.onload = location
   console.log(location)
 
   window.onload = function getDefault() {
-    fetch(
-      `${api.base}weather?lat=${Math.round(location.lat)}&lon=${Math.round(
-        location.lng
-      )}&units=metric&appid=${api.key}`
-    )
-      .then((result) => result.json())
-      .then((queryResult) => {
-        setCurrentWeather(queryResult)
-        setTimezone(queryResult?.city?.timezone ?? 0)
-        console.log(queryResult)
-      })
+    if (location.isError === false) {
+      fetch(
+        `${api.base}weather?lat=${Math.round(location.lat)}&lon=${Math.round(
+          location.lng
+        )}&units=metric&appid=${api.key}`
+      )
+        .then((result) => result.json())
+        .then((queryResult) => {
+          setCurrentWeather(queryResult)
+          setTimezone(queryResult?.city?.timezone ?? 0)
+          console.log(queryResult)
+        })
+    }
   }
 
   function search(event) {
@@ -142,7 +145,7 @@ function App() {
         <div>
           {typeof currentWeather.main !== "undefined" ? (
             <div>
-                <WeatherCard
+              <WeatherCard
                 city={currentWeather.name}
                 location={`${currentWeather.name}, ${currentWeather.sys.country}`}
                 localTime={clockState}
