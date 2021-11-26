@@ -82,7 +82,7 @@ function App() {
   }, [currentDate, setCurrentDate])
 
   const location = useGeolocation()
-  console.log(location)
+  
 
   window.onload = function getDefault() {
     fetch(
@@ -94,7 +94,7 @@ function App() {
       .then((queryResult) => {
         setCurrentWeather(queryResult)
         setTimezone(queryResult?.city?.timezone ?? 0)
-        console.log(queryResult)
+        
       })
   }
 
@@ -112,7 +112,7 @@ function App() {
         setQuery("")
         setTimezone(queryResult[1]?.city?.timezone ?? 0)
         setCurrentWeather([{}])
-        console.log(queryResult)
+        
       })
     }
   }
