@@ -9,6 +9,44 @@ import SearchBox from "./SearchBox/SearchBox"
 const api = {
   key: "66886611ba23f324994bdc57be8c66b1",
   base: "https://api.openweathermap.org/data/2.5/",
+};
+
+const daysOfTheWeek = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+function doDate(date) {
+  let dayOfTheWeek = daysOfTheWeek[date.getDay() - 1];
+  let day = date.getDate();
+  let month = months[date.getMonth()];
+  let year = date.getFullYear();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+
+  return `Today is ${dayOfTheWeek} ${day} ${month} ${year} ${(
+    "0" + hours
+  ).slice(-2)}:${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`;
 }
 
 const daysOfTheWeek = [
@@ -120,13 +158,13 @@ function App() {
   const time = currentDate.getHours()
   let className = null
   if (time >= 6 && time <= 11) {
-    className = classes.morning
+    className = classes.morning;
   } else if (time >= 12 && time <= 16) {
-    className = classes.day
+    className = classes.day;
   } else if (time >= 17 && time <= 22) {
-    className = classes.eve
+    className = classes.eve;
   } else if (time >= 23 || time <= 5) {
-    className = classes.night
+    className = classes.night;
   }
 
   return (
@@ -210,7 +248,7 @@ function App() {
         )}
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
