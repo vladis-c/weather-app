@@ -83,7 +83,7 @@ function App() {
 
   const location = useGeolocation()
   window.onload = location
-  console.log(location)
+  
 
   window.onload = function getDefault() {
     if (location.isError === false) {
@@ -96,7 +96,7 @@ function App() {
         .then((queryResult) => {
           setCurrentWeather(queryResult)
           setTimezone(queryResult?.city?.timezone ?? 0)
-          console.log(queryResult)
+          
         })
     }
   }
@@ -115,7 +115,7 @@ function App() {
         setQuery("")
         setTimezone(queryResult[1]?.city?.timezone ?? 0)
         setCurrentWeather([{}])
-        console.log(queryResult)
+        
       })
     }
   }
