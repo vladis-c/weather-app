@@ -52,6 +52,7 @@ main {
 }
 
 .location-box .location {
+  margin-bottom: 20px;
   color: #fff;
   font-size: 32px;
   font-weight: 500;
@@ -59,8 +60,9 @@ main {
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
 
-.location-box .date {
+.location-box .local-time {
   color: #fff;
+  margin-top: 8px;
   font-size: 20px;
   font-weight: 300;
   font-style: italic;
