@@ -7,7 +7,7 @@ import WeatherCard from "./WeatherCard/WeatherCard"
 import SearchBox from "./SearchBox/SearchBox"
 
 const api = {
-  key: "66886611ba23f324994bdc57be8c66b1",
+  key: process.env.REACT_APP_WEATHER_KEY,
   base: "https://api.openweathermap.org/data/2.5/",
 }
 
