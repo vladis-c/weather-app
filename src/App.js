@@ -20,25 +20,17 @@ const daysOfTheWeek = [
   "Saturday",
   "Sunday",
 ]
-const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-]
 
 function doDate(date) {
-  let dayOfTheWeek = daysOfTheWeek[date.getDay() - 1]
+  let dayOfTheWeek = date.toLocaleString(
+    "en-fi",
+    { weekday: "long" }
+  )
   let day = date.getDate()
-  let month = months[date.getMonth()]
+  let month = date.toLocaleString(
+    "en-fi",
+    { month: "long" }
+  )
   let year = date.getFullYear()
   let hours = date.getHours()
   let minutes = date.getMinutes()
